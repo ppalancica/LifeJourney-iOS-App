@@ -90,7 +90,8 @@ private extension LandingViewController {
     
     @objc
     private func signupButtonTouched() {
-        
+        let signupViewController = SignupViewController()
+        navigationController?.pushViewController(signupViewController, animated: true)
     }
     
     @objc

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B4CC3606244A687E00F8309E /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CC3605244A687E00F8309E /* LandingViewController.swift */; };
+		B4CC3608244A732500F8309E /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CC3607244A732500F8309E /* SignupViewController.swift */; };
 		B4D5EC7F2445117900A31E56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5EC7E2445117900A31E56 /* AppDelegate.swift */; };
 		B4D5EC812445117900A31E56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5EC802445117900A31E56 /* SceneDelegate.swift */; };
 		B4D5EC832445117900A31E56 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D5EC822445117900A31E56 /* MainViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		B4CC3605244A687E00F8309E /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		B4CC3607244A732500F8309E /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		B4D5EC7B2445117900A31E56 /* LifeJourney-iOS-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LifeJourney-iOS-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D5EC7E2445117900A31E56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4D5EC802445117900A31E56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				B4D5EC892445117D00A31E56 /* LaunchScreen.storyboard */,
 				B4D5EC8C2445117D00A31E56 /* Info.plist */,
 				B4CC3605244A687E00F8309E /* LandingViewController.swift */,
+				B4CC3607244A732500F8309E /* SignupViewController.swift */,
 			);
 			path = "LifeJourney-iOS-App";
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				B4D5EC832445117900A31E56 /* MainViewController.swift in Sources */,
 				B4D5EC7F2445117900A31E56 /* AppDelegate.swift in Sources */,
+				B4CC3608244A732500F8309E /* SignupViewController.swift in Sources */,
 				B4CC3606244A687E00F8309E /* LandingViewController.swift in Sources */,
 				B4D5EC812445117900A31E56 /* SceneDelegate.swift in Sources */,
 			);
