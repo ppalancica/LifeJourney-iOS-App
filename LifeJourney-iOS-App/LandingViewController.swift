@@ -22,6 +22,8 @@ class LandingViewController: UIViewController {
         
         addSignButton()
         addLoginButton()
+        
+        configureLayoutConstraints()
     }
 }
 
@@ -34,6 +36,7 @@ private extension LandingViewController {
         button.setTitleColor(.white, for: .normal)
         button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         button.sizeToFit()
+        button.addTarget(self, action: #selector(signupButtonTouched), for: .touchUpInside)
         return button
     }
     
@@ -44,6 +47,7 @@ private extension LandingViewController {
         button.setTitleColor(.white, for: .normal)
         button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         button.sizeToFit()
+        button.addTarget(self, action: #selector(loginButtonTouched), for: .touchUpInside)
         return button
     }
 }
@@ -51,24 +55,40 @@ private extension LandingViewController {
 private extension LandingViewController {
     
     private func addSignButton() {
-        let buttonSize = signupButton.frame.size
-        
-        signupButton.frame = CGRect(
-            origin: CGPoint(x: 16, y: 128),
-            size: buttonSize
-        )
-        
         view.addSubview(signupButton)
     }
     
     private func addLoginButton() {
-        let buttonSize = loginButton.frame.size
-        
-        loginButton.frame = CGRect(
-            origin: CGPoint(x: 16, y: 128 + 60),
-            size: buttonSize
-        )
-        
         view.addSubview(loginButton)
+    }
+    
+    private func configureLayoutConstraints() {
+        signupButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            signupButton.heightAnchor.constraint(equalToConstant: 44),
+            signupButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            signupButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            signupButton.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -16),
+            
+            loginButton.heightAnchor.constraint(equalToConstant: 44),
+            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+        ])
+    }
+}
+
+private extension LandingViewController {
+    
+    @objc
+    private func signupButtonTouched() {
+        
+    }
+    
+    @objc
+    private func loginButtonTouched() {
+        
     }
 }
