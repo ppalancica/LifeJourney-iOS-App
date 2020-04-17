@@ -31,9 +31,12 @@ private extension LandingViewController {
     
     private func makeSignupButton() -> UIButton {
         let button = UIButton()
-        button.backgroundColor = .black
+        button.layer.cornerRadius = 4
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.black.cgColor
+        button.backgroundColor = .white
+        button.setTitleColor(.black, for: .normal)
         button.setTitle("Signup", for: .normal)
-        button.setTitleColor(.white, for: .normal)
         button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         button.sizeToFit()
         button.addTarget(self, action: #selector(signupButtonTouched), for: .touchUpInside)
@@ -42,9 +45,12 @@ private extension LandingViewController {
     
     private func makeLoginButton() -> UIButton {
         let button = UIButton()
-        button.backgroundColor = .black
+        button.layer.cornerRadius = 4
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.black.cgColor
+        button.backgroundColor = .white
+        button.setTitleColor(.black, for: .normal)
         button.setTitle("Login", for: .normal)
-        button.setTitleColor(.white, for: .normal)
         button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         button.sizeToFit()
         button.addTarget(self, action: #selector(loginButtonTouched), for: .touchUpInside)
