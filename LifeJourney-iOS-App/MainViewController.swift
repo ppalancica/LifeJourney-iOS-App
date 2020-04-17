@@ -10,8 +10,14 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    private lazy var landingViewController = LandingViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        view.addSubview(landingViewController.view)
+        addChild(landingViewController)
+        landingViewController.didMove(toParent: self)
     }
 }
