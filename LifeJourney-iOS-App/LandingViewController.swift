@@ -26,7 +26,7 @@ class LandingViewController: UIViewController {
         
         view.backgroundColor = .white
         
-        addSignButton()
+        addSignupButton()
         addLoginButton()
         
         configureLayoutConstraints()
@@ -66,7 +66,7 @@ private extension LandingViewController {
 
 private extension LandingViewController {
     
-    private func addSignButton() {
+    private func addSignupButton() {
         view.addSubview(signupButton)
     }
     
