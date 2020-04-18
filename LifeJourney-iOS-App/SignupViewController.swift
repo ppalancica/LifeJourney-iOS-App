@@ -35,6 +35,7 @@ class SignupViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        title = "Signup Page"
         view.backgroundColor = .white
         
         addFirstNameTextField()

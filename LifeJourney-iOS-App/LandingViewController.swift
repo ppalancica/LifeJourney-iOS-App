@@ -16,6 +16,8 @@ private enum Constants {
 
 class LandingViewController: UIViewController {
     
+    private lazy var welcomeMessageLabel = makeWelcomeMessageLabel()
+    
     private lazy var signupButton = makeSignupButton()
     private lazy var loginButton = makeLoginButton()
 
@@ -26,6 +28,7 @@ class LandingViewController: UIViewController {
         
         view.backgroundColor = .white
         
+        addWelcomeMessageLabel()
         addSignupButton()
         addLoginButton()
         
@@ -34,6 +37,16 @@ class LandingViewController: UIViewController {
 }
 
 private extension LandingViewController {
+    
+    private func makeWelcomeMessageLabel() -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.backgroundColor = .clear
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.text = "Welcome to LifeJourney! If you are a new user, choose the Signup option to create a new account. If you are an existing user, press the Login button to connect."
+        return label
+    }
     
     private func makeSignupButton() -> UIButton {
         let button = UIButton()
@@ -66,6 +79,10 @@ private extension LandingViewController {
 
 private extension LandingViewController {
     
+    private func addWelcomeMessageLabel() {
+        view.addSubview(welcomeMessageLabel)
+    }
+    
     private func addSignupButton() {
         view.addSubview(signupButton)
     }
@@ -75,13 +92,19 @@ private extension LandingViewController {
     }
     
     private func configureLayoutConstraints() {
+        welcomeMessageLabel.translatesAutoresizingMaskIntoConstraints = false
         signupButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+//            welcomeMessageLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 128),
+            welcomeMessageLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            welcomeMessageLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.padding),
+            welcomeMessageLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.padding),
+            
             signupButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
-            signupButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.padding),
             signupButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.padding),
+            signupButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.padding),
             signupButton.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -Constants.padding),
             
             loginButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
