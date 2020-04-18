@@ -97,11 +97,28 @@ private extension LandingViewController {
     @objc
     private func signupButtonTouched() {
         let signupViewController = SignupViewController()
+        signupViewController.delegate = self
         navigationController?.pushViewController(signupViewController, animated: true)
     }
     
     @objc
     private func loginButtonTouched() {
         
+    }
+}
+
+extension LandingViewController: SignupViewControllerDelegate {
+    
+    func shouldSignupWith(signupDataModel: SignupDataModel) {
+        // Make a request
+        UserService.shared.signupWith(
+            signupDataModel: signupDataModel,
+            onSuccess: {
+                //
+            },
+            onFailure: {
+                //
+            }
+        )
     }
 }
