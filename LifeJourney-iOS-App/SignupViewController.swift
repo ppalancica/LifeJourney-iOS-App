@@ -42,6 +42,8 @@ class SignupViewController: UIViewController {
         addFirstNameTextField()
         addLastNameTextField()
         addPasswordTextField()
+        startObservingTextFieldEvents()
+        
         addSignupButton()
         
         configureLayoutConstraints()
@@ -53,21 +55,16 @@ private extension SignupViewController {
     private func addFirstNameTextField() {
         view.addSubview(firstNameTextField)
         firstNameTextField.delegate = self
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(textFieldDidChange(notification:)),
-            name: UITextField.textDidChangeNotification,
-            object: nil
-        )
     }
     
     private func addLastNameTextField() {
         view.addSubview(lastNameTextField)
+        lastNameTextField.delegate = self
     }
     
     private func addPasswordTextField() {
         view.addSubview(passwordTextField)
+        passwordTextField.delegate = self
     }
     
     private func addSignupButton() {
@@ -203,6 +200,20 @@ private extension SignupViewController {
 }
 
 extension SignupViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    private func startObservingTextFieldEvents() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(textFieldDidChange(notification:)),
+            name: UITextField.textDidChangeNotification,
+            object: nil
+        )
+    }
     
     @objc
     private func textFieldDidChange(notification: NSNotification) {
