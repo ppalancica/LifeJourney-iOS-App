@@ -8,6 +8,12 @@
 
 import UIKit
 
+private enum Constants {
+    static let padding = CGFloat(16)
+    static let buttonHeight = CGFloat(44)
+    static let buttonContentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+}
+
 class LandingViewController: UIViewController {
     
     private lazy var signupButton = makeSignupButton()
@@ -51,7 +57,7 @@ private extension LandingViewController {
         button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
         button.setTitle("Login", for: .normal)
-        button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        button.contentEdgeInsets = Constants.buttonContentEdgeInsets
         button.sizeToFit()
         button.addTarget(self, action: #selector(loginButtonTouched), for: .touchUpInside)
         return button
@@ -73,15 +79,15 @@ private extension LandingViewController {
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            signupButton.heightAnchor.constraint(equalToConstant: 44),
-            signupButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            signupButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            signupButton.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -16),
+            signupButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
+            signupButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.padding),
+            signupButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.padding),
+            signupButton.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -Constants.padding),
             
-            loginButton.heightAnchor.constraint(equalToConstant: 44),
-            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+            loginButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
+            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.padding),
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.padding),
+            loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.padding)
         ])
     }
 }

@@ -8,6 +8,12 @@
 
 import UIKit
 
+private enum Constants {
+    static let padding = CGFloat(16)
+    static let buttonHeight = CGFloat(44)
+    static let buttonContentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+}
+
 class SignupViewController: UIViewController {
 
     private lazy var firstNameTextField = makeFirstNameTextField()
@@ -49,20 +55,20 @@ private extension SignupViewController {
         signupButton.translatesAutoresizingMaskIntoConstraints = false
                 
         NSLayoutConstraint.activate([
-            firstNameTextField.heightAnchor.constraint(equalToConstant: 44),
-            firstNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            firstNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            firstNameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            firstNameTextField.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
+            firstNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.padding),
+            firstNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.padding),
+            firstNameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.padding),
             
-            lastNameTextField.heightAnchor.constraint(equalToConstant: 44),
-            lastNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            lastNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            lastNameTextField.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: 16),
+            lastNameTextField.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
+            lastNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.padding),
+            lastNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.padding),
+            lastNameTextField.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: Constants.padding),
             
-            signupButton.heightAnchor.constraint(equalToConstant: 44),
-            signupButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            signupButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            signupButton.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 16),
+            signupButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
+            signupButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.padding),
+            signupButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.padding),
+            signupButton.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: Constants.padding)
         ])
     }
 }
@@ -103,7 +109,7 @@ private extension SignupViewController {
         button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
         button.setTitle("Signup", for: .normal)
-        button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        button.contentEdgeInsets = Constants.buttonContentEdgeInsets
         button.sizeToFit()
         button.addTarget(self, action: #selector(signupButtonTouched), for: .touchUpInside)
         return button
