@@ -78,23 +78,23 @@ private extension SignupViewController {
                 
         NSLayoutConstraint.activate([
             firstNameTextField.heightAnchor.constraint(equalToConstant: Constants.textFieldHeight),
-            firstNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.padding),
-            firstNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.padding),
+            firstNameTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.padding),
+            firstNameTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.padding),
             firstNameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.padding),
             
             lastNameTextField.heightAnchor.constraint(equalToConstant: Constants.textFieldHeight),
-            lastNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.padding),
-            lastNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.padding),
+            lastNameTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.padding),
+            lastNameTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.padding),
             lastNameTextField.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: Constants.padding),
             
             passwordTextField.heightAnchor.constraint(equalToConstant: Constants.textFieldHeight),
-            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.padding),
-            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.padding),
+            passwordTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.padding),
+            passwordTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.padding),
             passwordTextField.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: Constants.padding),
             
             signupButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
-            signupButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.padding),
-            signupButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.padding),
+            signupButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.padding),
+            signupButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.padding),
             signupButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Constants.padding)
         ])
     }

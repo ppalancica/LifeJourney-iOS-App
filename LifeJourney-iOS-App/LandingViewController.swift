@@ -80,13 +80,13 @@ private extension LandingViewController {
         
         NSLayoutConstraint.activate([
             signupButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
-            signupButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.padding),
-            signupButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.padding),
+            signupButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.padding),
+            signupButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.padding),
             signupButton.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -Constants.padding),
             
             loginButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
-            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.padding),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.padding),
+            loginButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.padding),
+            loginButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.padding),
             loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.padding)
         ])
     }
