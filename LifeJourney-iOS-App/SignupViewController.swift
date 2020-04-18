@@ -16,14 +16,12 @@ private enum Constants {
 }
 
 protocol SignupViewControllerDelegate: class {
-    func shouldSignupWith(firstName: String, lastName: String, password: String)
+    func shouldSignupWith(signupDataModel: SignupDataModel)
 }
 
 class SignupViewController: UIViewController {
     
-    private var firstName: String = ""
-    private var lastName: String = ""
-    private var password: String = ""
+    private var signupDataModel = SignupDataModel()
     
     public weak var delegate: SignupViewControllerDelegate?
 
@@ -167,17 +165,13 @@ private extension SignupViewController {
     
     @objc
     private func signupButtonTouched() {
-        guard !firstName.isEmpty, !lastName.isEmpty, !password.isEmpty else { return }
+        guard !signupDataModel.hasEmptyFields() else { return }
         
-        print("First Name: \(firstName)")
-        print("Last Name: \(lastName)")
-        print("Password: \(password)")
+        print("First Name: \(signupDataModel.firstName)")
+        print("Last Name: \(signupDataModel.lastName)")
+        print("Password: \(signupDataModel.password)")
         
-        delegate?.shouldSignupWith(
-            firstName: firstName,
-            lastName: lastName,
-            password: password
-        )
+        delegate?.shouldSignupWith(signupDataModel: signupDataModel)
     }
     
     private func updatedSignupButton(isEnabled: Bool) {
@@ -220,14 +214,14 @@ extension SignupViewController: UITextFieldDelegate {
         guard let textField = notification.object as? UITextField, let text = textField.text else { return }
         
         if textField == firstNameTextField {
-            firstName = text
+            signupDataModel.updateFirstName(with: text)
         } else if textField == lastNameTextField {
-            lastName = text
+            signupDataModel.updateLastName(with: text)
         } else if textField == passwordTextField {
-            password = text
+            signupDataModel.updatePassword(with: text)
         }
         
-        let isSignupButtonEnabled = !firstName.isEmpty && !lastName.isEmpty && !password.isEmpty
+        let isSignupButtonEnabled = !signupDataModel.hasEmptyFields()
         updatedSignupButton(isEnabled: isSignupButtonEnabled)
     }
 }
