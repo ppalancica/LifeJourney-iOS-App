@@ -51,6 +51,7 @@ class SignupViewController: UIViewController {
 private extension SignupViewController {
     
     private func addFirstNameTextField() {
+        view.addSubview(firstNameTextField)
         firstNameTextField.delegate = self
         
         NotificationCenter.default.addObserver(
@@ -59,8 +60,6 @@ private extension SignupViewController {
             name: UITextField.textDidChangeNotification,
             object: nil
         )
-        
-        view.addSubview(firstNameTextField)
     }
     
     private func addLastNameTextField() {
@@ -73,6 +72,7 @@ private extension SignupViewController {
     
     private func addSignupButton() {
         view.addSubview(signupButton)
+        updatedSignupButton(isEnabled: false)
     }
     
     private func configureLayoutConstraints() {
@@ -145,6 +145,8 @@ private extension SignupViewController {
         button.layer.cornerRadius = 4
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.black.cgColor
+        // Setting `backgroundColor` and `titleColor` can be omitted here.
+        // We set different colors later on, based on isEnabled state
         button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
         button.setTitle("Signup", for: .normal)
@@ -180,6 +182,24 @@ private extension SignupViewController {
             password: password
         )
     }
+    
+    private func updatedSignupButton(isEnabled: Bool) {
+        signupButton.isEnabled = isEnabled
+        
+        let backgroundColor: UIColor
+        let titleColor: UIColor
+        
+        if isEnabled {
+            backgroundColor = .black
+            titleColor = .white
+        } else {
+            backgroundColor = .white
+            titleColor = .black
+        }
+        
+        signupButton.backgroundColor = backgroundColor
+        signupButton.setTitleColor(titleColor, for: .normal)
+    }
 }
 
 extension SignupViewController: UITextFieldDelegate {
@@ -195,5 +215,8 @@ extension SignupViewController: UITextFieldDelegate {
         } else if textField == passwordTextField {
             password = text
         }
+        
+        let isSignupButtonEnabled = !firstName.isEmpty && !lastName.isEmpty && !password.isEmpty
+        updatedSignupButton(isEnabled: isSignupButtonEnabled)
     }
 }
