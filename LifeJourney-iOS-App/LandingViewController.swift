@@ -17,7 +17,6 @@ private enum Constants {
 class LandingViewController: UIViewController {
     
     private lazy var welcomeMessageLabel = makeWelcomeMessageLabel()
-    
     private lazy var signupButton = makeSignupButton()
     private lazy var loginButton = makeLoginButton()
 
@@ -97,7 +96,6 @@ private extension LandingViewController {
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-//            welcomeMessageLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 128),
             welcomeMessageLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
             welcomeMessageLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.padding),
             welcomeMessageLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.padding),

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4AD5495244CA507002109C5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AD5494244CA507002109C5 /* CustomTextField.swift */; };
 		B4CC3606244A687E00F8309E /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CC3605244A687E00F8309E /* LandingViewController.swift */; };
 		B4CC3608244A732500F8309E /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CC3607244A732500F8309E /* SignupViewController.swift */; };
 		B4CC360A244B28D600F8309E /* SignupDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CC3609244B28D600F8309E /* SignupDataModel.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4AD5494244CA507002109C5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B4CC3605244A687E00F8309E /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		B4CC3607244A732500F8309E /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		B4CC3609244B28D600F8309E /* SignupDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupDataModel.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				B4CC3607244A732500F8309E /* SignupViewController.swift */,
 				B4CC3609244B28D600F8309E /* SignupDataModel.swift */,
 				B4CC360B244B320900F8309E /* UserService.swift */,
+				B4AD5494244CA507002109C5 /* CustomTextField.swift */,
 			);
 			path = "LifeJourney-iOS-App";
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				B4D5EC832445117900A31E56 /* MainViewController.swift in Sources */,
 				B4CC360A244B28D600F8309E /* SignupDataModel.swift in Sources */,
 				B4D5EC7F2445117900A31E56 /* AppDelegate.swift in Sources */,
+				B4AD5495244CA507002109C5 /* CustomTextField.swift in Sources */,
 				B4CC3608244A732500F8309E /* SignupViewController.swift in Sources */,
 				B4CC3606244A687E00F8309E /* LandingViewController.swift in Sources */,
 				B4D5EC812445117900A31E56 /* SceneDelegate.swift in Sources */,

@@ -103,33 +103,24 @@ private extension SignupViewController {
 
 private extension SignupViewController {
     
-    private func makeFirstNameTextField() -> UITextField {
-        let textField = UITextField()
-        textField.layer.cornerRadius = 4
-        textField.layer.borderWidth = 1
-        textField.addPadding()
+    private func makeFirstNameTextField() -> CustomTextField {
+        let textField = CustomTextField()
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.backgroundColor = .white
         textField.placeholder = "First Name here..."
         return textField
     }
     
-    private func makeLastNameTextField() -> UITextField {
-        let textField = UITextField()
-        textField.layer.cornerRadius = 4
-        textField.layer.borderWidth = 1
-        textField.addPadding()
+    private func makeLastNameTextField() -> CustomTextField {
+        let textField = CustomTextField()
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.backgroundColor = .white
         textField.placeholder = "Last Name here..."
         return textField
     }
     
-    private func makePasswordTextField() -> UITextField {
-        let textField = UITextField()
-        textField.layer.cornerRadius = 4
-        textField.layer.borderWidth = 1
-        textField.addPadding()
+    private func makePasswordTextField() -> CustomTextField {
+        let textField = CustomTextField()
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.backgroundColor = .white
         textField.placeholder = "Password here..."
@@ -150,15 +141,6 @@ private extension SignupViewController {
         button.sizeToFit()
         button.addTarget(self, action: #selector(signupButtonTouched), for: .touchUpInside)
         return button
-    }
-}
-
-private extension UITextField {
-    
-    func addPadding(width: CGFloat = 12) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: frame.height))
-        leftView = paddingView
-        leftViewMode = UITextField.ViewMode.always
     }
 }
 
