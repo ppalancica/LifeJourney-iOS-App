@@ -124,6 +124,7 @@ private extension SignupViewController {
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.backgroundColor = .white
         textField.placeholder = "Password here..."
+        textField.isSecureTextEntry = true
         return textField
     }
     
